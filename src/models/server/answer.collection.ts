@@ -12,8 +12,6 @@ export default async function createAnswerCollection() {
 		Permission.create("users"),
 	]);
 
-	console.log("Answer collection created");
-
 	// Create attributes and indexes
 	await Promise.all([
 		databases.createStringAttribute(
@@ -38,6 +36,4 @@ export default async function createAnswerCollection() {
 			true
 		),
 	]);
-
-	console.log("Answer collection attributes created");
 }

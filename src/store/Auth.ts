@@ -24,7 +24,7 @@ interface UserAuthStore {
 		success: boolean;
 		error?: AppwriteException | null;
 	}>;
-	creatAccount(
+	createAccount(
 		name: string,
 		email: string,
 		password: string
@@ -80,7 +80,7 @@ export const useAuthStore = create<UserAuthStore>()(
 				}
 			},
 
-			async creatAccount(name: string, email: string, password: string) {
+			async createAccount(name: string, email: string, password: string) {
 				try {
 					await account.create(ID.unique(), email, password, name);
 					return { success: true };

@@ -12,8 +12,6 @@ export default async function createCommentCollection() {
 		Permission.create("users"),
 	]);
 
-	console.log("Comment collection created");
-
 	// Create attributes and indexes
 	await Promise.all([
 		databases.createStringAttribute(
@@ -39,6 +37,4 @@ export default async function createCommentCollection() {
 			true
 		),
 	]);
-
-	console.log("Comment collection attributes created");
 }

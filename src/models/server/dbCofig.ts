@@ -8,7 +8,6 @@ import { databases } from "./config";
 export default async function getOrCreateDb() {
 	try {
 		await databases.get(db);
-		console.log("Database exists, skipping creation.");
 	} catch (error) {
 		try {
 			await databases.create(db, db);
@@ -19,7 +18,6 @@ export default async function getOrCreateDb() {
 				createCommentCollection(),
 				createVoteCollection(),
 			]);
-			console.log("All collections created.");
 		} catch (error) {
 			console.log("Error creating database", error);
 		}
